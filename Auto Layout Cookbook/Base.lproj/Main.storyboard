@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A283" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Recipes Container View Controller-->
@@ -14,62 +15,54 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EPr-3O-CFE" userLabel="Outer Stack View">
-                                <rect key="frame" x="20" y="28" width="560" height="556"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EPr-3O-CFE" userLabel="Outer Stack View">
+                                <rect key="frame" x="20" y="28" width="374" height="558.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="801" verticalHuggingPriority="801" horizontalCompressionResistancePriority="801" verticalCompressionResistancePriority="801" text="Loading Recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxV-hg-d72">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="20"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="800" verticalHuggingPriority="800" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-UP-N1C">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="498"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="28.5" width="374" height="498"/>
                                         <connections>
                                             <segue destination="wE4-wx-jcI" kind="embed" identifier="Load View" id="hgT-qn-ZYV"/>
                                         </connections>
                                     </containerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="IEm-bt-o3d" userLabel="Button Stack">
-                                        <rect key="frame" x="0.0" y="534" width="560" height="22"/>
+                                        <rect key="frame" x="0.0" y="534.5" width="374" height="24"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="802" verticalHuggingPriority="802" horizontalCompressionResistancePriority="802" verticalCompressionResistancePriority="802" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMd-Zo-dhL">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="22"/>
-                                                <animations/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="24"/>
                                                 <state key="normal" title="Previous"/>
                                                 <connections>
-                                                    <action selector="showPreviousRecipe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D0H-WC-hCr"/>
+                                                    <action selector="showPreviousRecipeWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WV9-5f-Du5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="803" verticalHuggingPriority="803" horizontalCompressionResistancePriority="803" verticalCompressionResistancePriority="803" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWd-jn-vEm">
-                                                <rect key="frame" x="200" y="0.0" width="160" height="22"/>
-                                                <animations/>
+                                                <rect key="frame" x="138" y="0.0" width="98" height="24"/>
                                                 <connections>
                                                     <segue destination="JLO-vd-LUw" kind="presentation" identifier="InformationView" id="1a7-85-9Tt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="802" verticalHuggingPriority="802" horizontalCompressionResistancePriority="802" verticalCompressionResistancePriority="802" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al4-YC-mnh">
-                                                <rect key="frame" x="400" y="0.0" width="160" height="22"/>
-                                                <animations/>
+                                                <rect key="frame" x="276" y="0.0" width="98" height="24"/>
                                                 <state key="normal" title="Next"/>
                                                 <connections>
-                                                    <action selector="showNextRecipe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42s-hI-3dv"/>
+                                                    <action selector="showNextRecipeWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ia-5K-CE3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <animations/>
                                     </stackView>
                                 </subviews>
-                                <animations/>
                                 <gestureRecognizers/>
                             </stackView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="EPr-3O-CFE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9cJ-jU-9cF"/>
@@ -119,7 +112,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="KRH-bh-Voh">
                     <connections>
-                        <action selector="displayFullScreen:" destination="BYZ-38-t0r" id="rXo-Ec-901"/>
+                        <action selector="displayFullScreenWithSender:" destination="BYZ-38-t0r" id="VH3-Pd-ULf"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
@@ -130,9 +123,8 @@
             <objects>
                 <navigationController id="JLO-vd-LUw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6V-T6-Afj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="vA7-I0-M7m" kind="relationship" relationship="rootViewController" id="2pY-pk-zmA"/>
@@ -263,20 +255,18 @@
                         <viewControllerLayoutGuide type="bottom" id="06e-J3-AUh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y1O-s1-jh5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-3l-8oR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcH-3l-8oR">
                                 <rect key="frame" x="20" y="0.0" width="560" height="580"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xcH-3l-8oR" firstAttribute="top" secondItem="Y1O-s1-jh5" secondAttribute="topMargin" id="4n6-xu-vzc"/>
                             <constraint firstItem="xcH-3l-8oR" firstAttribute="leading" secondItem="Y1O-s1-jh5" secondAttribute="leadingMargin" id="8bW-JG-7dJ"/>
@@ -293,7 +283,7 @@
                     <navigationItem key="navigationItem" title="Information" id="hmq-QN-4FU">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="Fs9-5O-a2i">
                             <connections>
-                                <segue destination="yjs-m3-vua" kind="unwind" unwindAction="dismissInformationViewController:" id="TeH-p8-dv6"/>
+                                <segue destination="yjs-m3-vua" kind="unwind" unwindAction="dismissInformationViewControllerWithSender:" id="Ej7-sg-QRm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -403,16 +393,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Ty5-Vq-1v4"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aro-EL-Wlu" userLabel="Loading View">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="498"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="498"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-qn-ffv">
-                                <rect key="frame" x="261" y="231" width="37" height="37"/>
-                                <animations/>
+                                <rect key="frame" x="168.5" y="230.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" label="Loading"/>
                         <constraints>
                             <constraint firstItem="gG6-qn-ffv" firstAttribute="centerY" secondItem="aro-EL-Wlu" secondAttribute="centerY" id="Ws3-2D-wKP"/>

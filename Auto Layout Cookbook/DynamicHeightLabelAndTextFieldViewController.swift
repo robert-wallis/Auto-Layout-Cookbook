@@ -15,17 +15,17 @@ class DynamicHeightLabelAndTextFieldViewController: UIViewController {
     
     var usingLargeFont = false
     
-    var timer: NSTimer?
+    var timer: Timer?
     
     // MARK: UIViewController
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "changeFontSizeTimerDidFire:", userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeFontSizeTimerDidFire(timer:)), userInfo: nil, repeats: true)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         timer?.invalidate()
@@ -34,11 +34,11 @@ class DynamicHeightLabelAndTextFieldViewController: UIViewController {
     
     // MARK: Timer
 
-    func changeFontSizeTimerDidFire(timer: NSTimer) {
+    @objc func changeFontSizeTimerDidFire(timer: Timer) {
         // Toggle the font preference.
         usingLargeFont = !usingLargeFont
         
         // Set the `nameLabel`'s font for the appropriate size.
-        nameLabel.font = usingLargeFont ? UIFont.systemFontOfSize(36.0) : UIFont.systemFontOfSize(17.0)
+        nameLabel.font = usingLargeFont ? UIFont.systemFont(ofSize: 36.0) : UIFont.systemFont(ofSize: 17.0)
     }
 }

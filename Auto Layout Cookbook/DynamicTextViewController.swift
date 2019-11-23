@@ -21,7 +21,7 @@ class DynamicTextViewController: UIViewController {
     
     deinit {
         if let observer = fontChangeObserver {
-            NSNotificationCenter.defaultCenter().removeObserver(observer)
+            NotificationCenter.default.removeObserver(observer)
         }
     }
 
@@ -30,17 +30,17 @@ class DynamicTextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let application = UIApplication.sharedApplication()
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        let queue = NSOperationQueue.mainQueue()
+        let application = UIApplication.shared
+        let notificationCenter = NotificationCenter.default
+        let queue = OperationQueue.main
         
-        fontChangeObserver = notificationCenter.addObserverForName(UIContentSizeCategoryDidChangeNotification, object: application, queue: queue) { [unowned self] _ in
+        fontChangeObserver = notificationCenter.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: application, queue: queue) { [unowned self] _ in
             /*
                 The user has changed the system font sizes, reset the the labels'
                 fonts to apply the new sizes.
             */
-            self.titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
-            self.bodyTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+            self.titleLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.title1)
+            self.bodyTextView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         }
     }
 }

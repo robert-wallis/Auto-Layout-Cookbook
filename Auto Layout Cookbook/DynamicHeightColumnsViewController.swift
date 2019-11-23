@@ -15,17 +15,17 @@ class DynamicHeightColumnsViewController: UIViewController {
     
     var usingLargeFont = false
     
-    var timer: NSTimer?
+    var timer: Timer?
     
     // MARK: UIViewController
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "changeFontSizeTimerDidFire:", userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(changeFontSizeTimerDidFire), userInfo: nil, repeats: true)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
         timer?.invalidate()
@@ -34,12 +34,12 @@ class DynamicHeightColumnsViewController: UIViewController {
     
     // MARK: Timer
     
-    func changeFontSizeTimerDidFire(timer: NSTimer) {
+    @objc func changeFontSizeTimerDidFire(timer: Timer) {
         // Toggle the font preference.
         usingLargeFont = !usingLargeFont
         
         // Determine which font should now be used.
-        let font = usingLargeFont ? UIFont.systemFontOfSize(36.0) : UIFont.systemFontOfSize(17.0)
+        let font = usingLargeFont ? UIFont.systemFont(ofSize: 36.0) : UIFont.systemFont(ofSize: 17.0)
         
         for label in labels {
             label.font = font

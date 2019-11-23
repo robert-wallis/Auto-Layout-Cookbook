@@ -50,7 +50,7 @@ class RecipeTests: XCTestCase {
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
         
-        XCUIDevice.sharedDevice().orientation = .Portrait
+        XCUIDevice.shared.orientation = .portrait
     }
     
     // MARK: Tests

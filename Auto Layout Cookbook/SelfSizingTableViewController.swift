@@ -22,7 +22,7 @@ class SelfSizingTableViewController: UITableViewController {
 
     deinit {
         if let observer = fontChangeObserver {
-            NSNotificationCenter.defaultCenter().removeObserver(observer)
+            NotificationCenter.default.removeObserver(observer)
         }
     }
     
@@ -33,26 +33,26 @@ class SelfSizingTableViewController: UITableViewController {
         
         // Enable self sizing rows.
         tableView.estimatedRowHeight = 80.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         // Set up font change observer
-        let application = UIApplication.sharedApplication()
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        let queue = NSOperationQueue.mainQueue()
+        let application = UIApplication.shared
+        let notificationCenter = NotificationCenter.default
+        let queue = OperationQueue.main
         
-        fontChangeObserver = notificationCenter.addObserverForName(UIContentSizeCategoryDidChangeNotification, object: application, queue: queue) { [unowned self] _ in
+        fontChangeObserver = notificationCenter.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: application, queue: queue) { [unowned self] _ in
             self.tableView.invalidateIntrinsicContentSize()
         }
     }
 
     // MARK: UITableViewDataSource
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sampleTexts.count
     }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(SelfSizingTableViewCell.reuseIdentifier, forIndexPath: indexPath) as? SelfSizingTableViewCell else {
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SelfSizingTableViewCell.reuseIdentifier, for: indexPath) as? SelfSizingTableViewCell else {
             fatalError("Unable to dequeue a SelfSizingTableViewCell.")
         }
         

@@ -20,12 +20,12 @@ class SelfSizingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        textView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        textView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        textView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        textView.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
     }
 }

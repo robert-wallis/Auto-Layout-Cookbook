@@ -33,10 +33,10 @@ class UIKitDynamicsViewController: UIViewController {
         collision = UICollisionBehavior(items: [dynamicView])
         
         let boundaryInsets = UIEdgeInsets(top: -200.0, left: -20.0, bottom: 20.0, right: 20.0)
-        collision.setTranslatesReferenceBoundsIntoBoundaryWithInsets(boundaryInsets)
+        collision.setTranslatesReferenceBoundsIntoBoundary(with: boundaryInsets)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         setOffscreenPosition()
@@ -47,7 +47,7 @@ class UIKitDynamicsViewController: UIViewController {
     
     private func setOffscreenPosition() {
         var center = view.center
-        center.y = -(CGRectGetHeight(dynamicView.frame) / 2.0)
+        center.y = -(dynamicView.frame.height / 2.0)
         dynamicView.center = center
         
         animator.removeAllBehaviors()
