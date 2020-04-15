@@ -77,6 +77,7 @@
 		B538D1C91BA0562600674D8D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538D1C81BA0562600674D8D /* Recipe.swift */; };
 		B538D1CD1BA05C5500674D8D /* Recipe+Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538D1CC1BA05C5500674D8D /* Recipe+Storyboards.swift */; };
 		B538D1CF1BA069ED00674D8D /* Recipe+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538D1CE1BA069ED00674D8D /* Recipe+Loading.swift */; };
+		E1F378ED24478DDC0059B678 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E1F378EC24478DDC0059B678 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		B538D1C81BA0562600674D8D /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		B538D1CC1BA05C5500674D8D /* Recipe+Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+Storyboards.swift"; sourceTree = "<group>"; };
 		B538D1CE1BA069ED00674D8D /* Recipe+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recipe+Loading.swift"; sourceTree = "<group>"; };
+		E1F378EC24478DDC0059B678 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		9317C4BE1B31CE51003DD739 = {
 			isa = PBXGroup;
 			children = (
+				E1F378EC24478DDC0059B678 /* README.md */,
 				9317C4C91B31CE51003DD739 /* Auto Layout Cookbook */,
 				0A6AB0BC1BA10DD200E8D9ED /* UI Tests */,
 				9317C4C81B31CE51003DD739 /* Products */,
@@ -366,7 +369,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 1120;
-				ORGANIZATIONNAME = "Rich Warren";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					0A6AB0BA1BA10DD200E8D9ED = {
 						CreatedOnToolsVersion = 7.0;
@@ -451,6 +454,7 @@
 				930104A41B3B644B0050658C /* DynamicHeightColumns.txt in Resources */,
 				93F720CA1B3C4FF600041731 /* EqualWhiteSpace.storyboard in Resources */,
 				932151B81B3D9291009654CF /* SelfSizingTableViewCells.txt in Resources */,
+				E1F378ED24478DDC0059B678 /* README.md in Resources */,
 				93BFCC1E1B5D7C73006FF54A /* ButtonsSizeClass.txt in Resources */,
 				931822781B3714C800A2F0EE /* SimpleStackView.txt in Resources */,
 				937EBA391B39B887001A83F8 /* DynamicStackView.storyboard in Resources */,
